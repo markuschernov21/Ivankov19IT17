@@ -26,8 +26,8 @@ namespace ConsoleApp1
 				}
 				Console.WriteLine(R);
 				Console.WriteLine("Условие: ");
-				/* проверка на условие если R кратно 21 и является произведением двух случайных чисел массива) 
-				если подходит, выводится R, если нет, выводится -1 */
+				/*условие если R кратно 21 и является произведением двух случайных чисел массива) 
+				если верно выводится R, если не верно выводится -1 */
 				if ((R % 21 == 0) && (R == ((massive[new Random().Next(0, massive.Length)]) * (massive[new Random().Next(0, massive.Length)]))))
 				{
 					Console.WriteLine(R);
