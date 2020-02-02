@@ -37,9 +37,6 @@ namespace ConsoleApp1
 					Console.WriteLine("-1"); 
 				}
 			}
-
-
-
 		}
 	}
 }
