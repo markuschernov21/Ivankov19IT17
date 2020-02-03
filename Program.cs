@@ -10,11 +10,12 @@ namespace ConsoleApp1
 		{
 
 			{
+				
 				Random rand = new Random(); //рандома
 				int[] massive = new int[1000]; //массива
-				for (int i = 0; i < 1000; i++) //цикл от 0 до 10000 заполнен рандомными числами
+				for (int i = 0; i < 100; i++) //цикл от 0 до 10000 заполнен рандомными числами
 				{
-					massive[i] = rand.Next(0, 10000);
+					massive[i] = rand.Next(0, 1000);
 					Console.WriteLine(massive[i]);
 				}
 				int R = massive[0];
@@ -26,9 +27,13 @@ namespace ConsoleApp1
 				}
 				Console.WriteLine(R);
 				Console.WriteLine("Условие: ");
-				/*условие если R кратно 21 и является произведением двух случайных чисел массива) 
-				если верно выводится R, если не верно выводится -1 */
-				if ((R % 21 == 0) && (R == ((massive[new Random().Next(0, massive.Length)]) * (massive[new Random().Next(0, massive.Length)]))))
+				/* проверка на условие если R кратно 21 и является произведением двух случайных чисел массива) 
+				если подходит, выводится R, если нет, выводится -1 */
+				int a = massive[new Random().Next(0, massive.Length)];
+				int b = massive[new Random().Next(0, massive.Length)];
+
+				int c = a * b;
+				if ((R % 21 == 0) && (R == c && (a - b <= 8 || b - a <= 8)))
 				{
 					Console.WriteLine(R);
 				}
@@ -36,7 +41,11 @@ namespace ConsoleApp1
 				{ 
 					Console.WriteLine("-1"); 
 				}
+
 			}
+
+
+
 		}
 	}
 }
